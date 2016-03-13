@@ -80,7 +80,7 @@ function _setv_create()
     else
 	echo "Creating new virtual environment with the name: $1"
 	virtualenv -p $(which python) ${VIRTUAL_DIR_PATH}${1}
-	# TODO: source ${VIRTUAL_DIR_PATH}
+	echo "You can activate the environment by typing: setv ${1}"
     fi
 }
 

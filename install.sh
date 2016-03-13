@@ -29,9 +29,9 @@ fi
 
 # Done installing
 echo -e "${RED}"* "${RESET}""${BOLD_GREEN}"Installation done!"${RESET}"
-echo -e "${RED}"* "${RESET}"Type 'source ~/.bashrc'
+echo -e "${RED}"* "${RESET}"Type: 'source ~/.bashrc'
 echo -e "${RED}"* "${RESET}"or open new terminal to start using "${BOLD_GREEN}"setV"${RESET}"
 
 # Usage
 echo -e "${RED}"===================="${RESET}"
-echo -e "${BOLD_GREEN}"Usage: setv VIRTUAL_ENVIRONMENT_NAME"${RESET}"
+echo -e "${BOLD_GREEN}"Usage: setv VIRTUAL_ENVIRONMENT_NAME"${RESET}\n"
