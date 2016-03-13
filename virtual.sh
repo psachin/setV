@@ -49,8 +49,8 @@ function _setvcomplete_()
 {
     # bash-completion
     local cmd="${1##*/}" # to handle command(s).
-                         # Not necessary here as 'setv' is
-                         # the only command
+                         # Not necessary as such. 'setv' is the only command
+
     local word=${COMP_WORDS[COMP_CWORD]} # Words thats being completed
     local xpat='${word}'		 # Filter pattern. Include
 					 # only words in variable '$names'
