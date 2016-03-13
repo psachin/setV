@@ -33,7 +33,7 @@
 # To deactivate, type:
 # $ deactivate
 
-# TODO (Testing):
+# Testing needed:
 # - Create virtualenv with command something like: setv -n new_virt_name
 # - Delete virtualenv with command something like: setv -d old_virt_name
 
