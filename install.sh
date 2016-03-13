@@ -11,7 +11,7 @@ BLUE="\e[0;34m"
 RESET="\e[0m"
 
 echo -e "${RED}"* "${RESET}""${BOLD_GREEN}"Creating directory to hold all Python virtual environments"${RESET}"
-mkdir -p ${HOME}/virtualenvs
+mkdir -p "${HOME}"/virtualenvs
 
 # TODO: download actual file as ${HOME}/.virtual.sh
 echo -e "${RED}"* "${RESET}""${BOLD_GREEN}"Downloading setV"${RESET}"
@@ -29,7 +29,7 @@ then
 fi
 
 # TODO: source
-source ${HOME}/.virtual.sh
+source ~/.virtual.sh
 
 # TODO: verify
 
