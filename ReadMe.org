@@ -1,4 +1,4 @@
-* setV
+* [[./img/logo.png]]
   Light-weight Python virtual environment manager
 
   For more than a year 'setV' was lying under
