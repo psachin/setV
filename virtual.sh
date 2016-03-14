@@ -37,10 +37,6 @@
 # - Create virtualenv with command something like: setv -n new_virt_name
 # - Delete virtualenv with command something like: setv -d old_virt_name
 
-# ChangeLog :
-# Fri Apr 25 12:41:40 IST 2014: TAB completion
-# Mon Nov 02 12:51:54 IST 2015: Create/delete virtual environment
-
 # Path to virtual environment directory
 VIRTUAL_DIR_PATH="$HOME/virtualenvs/"
 LIST_OF_VIRTUALENVS=$(ls -l "${VIRTUAL_DIR_PATH}" | egrep '^d' | awk -F " " '{print $NF}')
