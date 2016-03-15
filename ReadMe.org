@@ -1,10 +1,9 @@
 * [[./img/logo.png]]
-  Light-weight Python virtual environment manager
+  /Lightweight Python virtual environment manager/
 
-  For more than a year 'setV' was lying under
-  [[https://github.com/psachin/bash_scripts]]. I use it as an alternative
-  to [[https://virtualenvwrapper.readthedocs.org/][virtualenvwrapper]]. It is a bash function and provides basic
-  features such as:
+  For more than a year *setV* was lying under [[https://github.com/psachin/bash_scripts][bash_scripts]]. I use it
+  as an alternative to [[https://virtualenvwrapper.readthedocs.org/][virtualenvwrapper]]. It is a Bash function which
+  provides basic features such as:
   - Create new virtual environment
   - Delete existing virtual environment(s)
   - List existing virtual environment(s)
@@ -22,7 +21,7 @@
    - When you install =setv=, the installation script will ask you to
      source =~/.bashrc= or =~/.bash_profile=. Please do that.
 
-*** Activating existing environment(s)
+*** Activate existing environment
 
     #+BEGIN_SRC sh
       setv VIRTUAL_ENVIRONMENT_NAME
@@ -58,9 +57,9 @@
     #+END_SRC
 
 *** In case you don't fully remember virtual environment name
-     - Bash like TAB completion works with virtual environment names
+     - Bash-like TAB completion works for virtual environment names
 
-** Contribution
+** Contribute
    - Create new issue.
    - Patches are welcome for existing issues.
 
