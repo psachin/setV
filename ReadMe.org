@@ -21,6 +21,9 @@
    - When you install =setv=, the installation script will ask you to
      source =~/.bashrc= or =~/.bash_profile=. Please do that.
 
+** Screencast(Installation & Usage)
+   [[./img/screencast.gif]]
+
 *** Activate existing environment
 
     #+BEGIN_SRC sh
