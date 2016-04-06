@@ -24,6 +24,11 @@
 ** Screencast(Installation & Usage)
    [[./img/screencast.gif]]
 
+*** Create virtual environment
+    #+BEGIN_SRC sh
+      setv -n rango
+    #+END_SRC
+
 *** Activate existing environment
 
     #+BEGIN_SRC sh
@@ -41,11 +46,6 @@
       setv -l
       # or
       setv [TAB] [TAB]
-    #+END_SRC
-
-*** Create virtual environment
-    #+BEGIN_SRC sh
-      setv -n rango
     #+END_SRC
 
 *** Delete virtual environment
