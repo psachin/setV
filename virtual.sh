@@ -39,6 +39,7 @@
 
 # Path to virtual environment directory
 VIRTUAL_DIR_PATH="$HOME/virtualenvs/"
+# FIXME: This is cached.
 LIST_OF_VIRTUALENVS=$(ls -l "${VIRTUAL_DIR_PATH}" | egrep '^d' | awk -F " " '{print $NF}')
 
 function _setvcomplete_()
@@ -60,11 +61,11 @@ function _setvcomplete_()
 
 function _setv_help_() {
     # Echo help
-    echo "Help: "
-    echo -e "setv [-l] \t\t\t to list all virtual envs."
-    echo -e "setv [Virtual_env_name] \t to set virtual env."
-    echo -e "setv -n [New virtual_env_name] \t to create virtual env(NEW)."
-    echo -e "setv -d [virtual_env_name] \t to delete existing virtual env(NEW)."
+    echo "Usage: setv [OPTIONS] [NAME]"
+    echo -e "NAME                       Activate virtual env."
+    echo -e "-l, --list                 List all virtual envs."
+    echo -e "-n, --new NAME             Create virtual env."
+    echo -e "-d, --delete NAME          Delete existing virtual env."
 }
 
 function _setv_create()
@@ -112,22 +113,16 @@ function setv() {
 	_setv_help_
     else
 	case "${1}" in
-	    '-n') _setv_create ${2}
-		;;
-
-	    '-d') _setv_delete ${2}
-		;;
-
-	    '-l') _setv_list
-		;;
-
+	    -n|--new) _setv_create ${2};;
+	    -d|--delete) _setv_delete ${2};;
+	    -l|--list) _setv_list;;
 	    *) if [ -d ${VIRTUAL_DIR_PATH}${1} ];
 	       then
 		   # Activate the virtual environment
 		   source ${VIRTUAL_DIR_PATH}${1}/bin/activate
 	       else
 		   # Else throw an error message
-		   echo "Sorry, you don't have any virtual environment with that name"
+		   echo "Sorry, you don't have any virtual environment with the name: ${1}"
 		   _setv_help_
 	       fi
 	       ;;
