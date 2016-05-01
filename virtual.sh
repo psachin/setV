@@ -39,8 +39,6 @@
 
 # Path to virtual environment directory
 VIRTUAL_DIR_PATH="$HOME/virtualenvs/"
-# FIXME: This is cached.
-LIST_OF_VIRTUALENVS=$(ls -l "${VIRTUAL_DIR_PATH}" | egrep '^d' | awk -F " " '{print $NF}')
 
 function _setvcomplete_()
 {
@@ -51,7 +49,7 @@ function _setvcomplete_()
     local word=${COMP_WORDS[COMP_CWORD]} # Words thats being completed
     local xpat='${word}'		 # Filter pattern. Include
 					 # only words in variable '$names'
-    local names=${LIST_OF_VIRTUALENVS} # Virtual environment names
+    local names=$(ls -l "${VIRTUAL_DIR_PATH}" | egrep '^d' | awk -F " " '{print $NF}') # Virtual environment names
 
     COMPREPLY=($(compgen -W "$names" -X "$xpat" -- "$word")) # 'compgen
 							     # generates
@@ -100,7 +98,7 @@ function _setv_delete()
 
 function _setv_list() {
     echo -e "List of virtual environments you have under ${VIRTUAL_DIR_PATH}:\n"
-    for virt in ${LIST_OF_VIRTUALENVS}
+    for virt in $(ls -l "${VIRTUAL_DIR_PATH}" | egrep '^d' | awk -F " " '{print $NF}')
     do
 	echo ${virt}
     done
