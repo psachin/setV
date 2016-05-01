@@ -25,12 +25,11 @@ then
     echo "source ~/.virtual.sh" >> ${HOME}/.bash_profile
 fi
 
-# TODO: verify
+# TODO: Verify THIS script
 
 # Done installing
 echo -e "${RED}"* "${RESET}""${BOLD_GREEN}"Installation done!"${RESET}"
-echo -e "${RED}"* "${RESET}"Type: 'source ~/.bashrc'
-echo -e "${RED}"* "${RESET}"or open new terminal to start using "${BOLD_GREEN}"setV"${RESET}"
+echo -e "${RED}"* "${RESET}"You can start using "${BOLD_GREEN}"setV"${RESET}"
 
 # Usage
 echo -e "${RED}"===================="${RESET}"
