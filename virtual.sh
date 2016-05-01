@@ -60,7 +60,9 @@ function _setvcomplete_()
 function _setv_help_() {
     # Echo help/usage message
     echo "Usage: setv [OPTIONS] [NAME]"
+    echo Positional argument:
     echo -e "NAME                       Activate virtual env."
+    echo Optional arguments:
     echo -e "-l, --list                 List all virtual envs."
     echo -e "-n, --new NAME             Create virtual env."
     echo -e "-d, --delete NAME          Delete existing virtual env."
