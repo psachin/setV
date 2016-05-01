@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
-# setV - Light-weight Python virtual environment manager.
-# Author: psachin.github.io/about
+# setV - Lightweight Python virtual environment manager.
+# Author: Sachin (psachin) <iclcoolster@gmail.com>
+# Author's URL: psachin.github.io/about
 #
 # License: GNU GPL v3, See LICENSE file
 #
-# Configure:
+# Configure(Optional):
 # Set `VIRTUAL_DIR_PATH` value to your virtual environments
 # directory-path. By default it is set to '~/virtualenvs/'
 #
 # Usage:
-# Added this line to your .bashrc or any local rc script.
-# $ source /path/to/virtual.sh
+# Manual install: Added below line to your .bashrc or any local rc script():
+# ---
+# source /path/to/virtual.sh
+# ---
 #
 # Now you can 'activate' the virtual environment by typing
 # $ setv <YOUR VIRTUAL ENVIRONMENT NAME>
@@ -22,27 +25,24 @@
 # setv [TAB] [TAB]  (to list all virtual envs)
 #
 # To list all your virtual environments:
-# $ setv -l
+# $ setv --list
 #
 # To create new virtual environment:
-# $ setv -n new_virtualenv_name
+# $ setv --new new_virtualenv_name
 #
 # To delete existing virtual environment:
-# $ setv -d existing_virtualenv_name
+# $ setv --delete existing_virtualenv_name
 #
 # To deactivate, type:
 # $ deactivate
-
-# Testing needed:
-# - Create virtualenv with command something like: setv -n new_virt_name
-# - Delete virtualenv with command something like: setv -d old_virt_name
 
 # Path to virtual environment directory
 VIRTUAL_DIR_PATH="$HOME/virtualenvs/"
 
 function _setvcomplete_()
 {
-    # bash-completion
+    # Bash-autocompletion.
+    # This ensures Tab-auto-completions work for virtual environment names.
     local cmd="${1##*/}" # to handle command(s).
                          # Not necessary as such. 'setv' is the only command
 
@@ -58,7 +58,7 @@ function _setvcomplete_()
 }
 
 function _setv_help_() {
-    # Echo help
+    # Echo help/usage message
     echo "Usage: setv [OPTIONS] [NAME]"
     echo -e "NAME                       Activate virtual env."
     echo -e "-l, --list                 List all virtual envs."
@@ -68,6 +68,7 @@ function _setv_help_() {
 
 function _setv_create()
 {
+    # Creates new virtual environment if ran with -n|--new flag
     if [ -z ${1} ];
     then
 	echo "You need to pass virtual environment name"
@@ -81,6 +82,7 @@ function _setv_create()
 
 function _setv_delete()
 {
+    # Deletes virtual environment if ran with -d|--delete flag
     # TODO: Refactor
     if [ -z ${1} ];
     then
@@ -96,7 +98,9 @@ function _setv_delete()
     fi
 }
 
-function _setv_list() {
+function _setv_list()
+{
+    # Lists all virtual environments if ran with -l|--list flag
     echo -e "List of virtual environments you have under ${VIRTUAL_DIR_PATH}:\n"
     for virt in $(ls -l "${VIRTUAL_DIR_PATH}" | egrep '^d' | awk -F " " '{print $NF}')
     do
@@ -128,8 +132,7 @@ function setv() {
     fi
 }
 
-complete  -F _setvcomplete_ setv # call bash-complete. The compgen
-				 # command accepts most of the same
-				 # options that complete does but it
-				 # generates results rather than just
-				 # storing the rules for future use.
+# Calls bash-complete. The compgen command accepts most of the same
+# options that complete does but it generates results rather than just
+# storing the rules for future use.
+complete  -F _setvcomplete_ setv

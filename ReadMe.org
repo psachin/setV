@@ -26,7 +26,7 @@
 
 *** Create virtual environment
     #+BEGIN_SRC sh
-      setv -n rango
+      setv --new rango
     #+END_SRC
 
 *** Activate existing environment
@@ -43,14 +43,14 @@
 *** List all virtual environment(s)
     You can list existing virtual environments by typing
     #+BEGIN_SRC sh
-      setv -l
+      setv --list
       # or
       setv [TAB] [TAB]
     #+END_SRC
 
 *** Delete virtual environment
     #+BEGIN_SRC sh
-      setv -d rango
+      setv --delete rango
     #+END_SRC
 
 *** Switch to another virtual environment
