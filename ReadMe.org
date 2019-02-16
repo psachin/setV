@@ -1,3 +1,5 @@
+**Note**: The development of this project is moved to https://gitlab.com/psachin/setV
+
 * [[./img/logo.png]]
   /Lightweight Python virtual environment manager/
 
